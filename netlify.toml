@@ -1,0 +1,43 @@
+# MMarchetti Digital — sito statico, nessun comando di build: si pubblica la radice.
+[build]
+  publish = "."
+
+# Le cartelle che iniziano con _ (brand, documenti) e i file di lavoro restano nel
+# repository ma non devono essere raggiungibili dal sito: rispondono sempre 404.
+# Non uso un comando di build che li cancella: `netlify build` in locale
+# cancellerebbe davvero le cartelle dal computer.
+[[redirects]]
+  from = "/_brand/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/_docs/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/README.md"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/netlify.toml"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/.gitattributes"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/.gitignore"
+  to = "/404.html"
+  status = 404
+  force = true
