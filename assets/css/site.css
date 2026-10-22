@@ -59,11 +59,24 @@ fieldset { padding: 0; border: 0; min-width: 0; }
 .section + .section { border-top: var(--border-deco); }
 .section__head { display: grid; gap: var(--space-2); max-width: var(--measure); }
 .section__head h2 { margin-bottom: var(--space-1); }
+.section__head p { max-width: 56ch; }
 .section > .container > .section__head { margin-bottom: var(--space-5); }
 
+/* Titolo a lato: 5 colonne tra 840 e 1199px (su 4 le righe scendono sotto i 30 caratteri), 4 da 1200px */
 @media (min-width: 840px) {
-  .section__head--side { grid-column: 1 / span 4; align-self: start; }
+  .section__head--side { grid-column: 1 / span 5; align-self: start; }
+}
+@media (min-width: 1200px) {
+  .section__head--side { grid-column: 1 / span 4; }
   .section__head--contact { grid-column: 1 / span 5; align-self: start; }
+}
+
+/* Link isolati (non dentro una frase): area di tocco 44px */
+.audience .mm-link,
+.service .mm-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
 }
 
 /* ---------- Header ---------- */
@@ -118,8 +131,8 @@ fieldset { padding: 0; border: 0; min-width: 0; }
 .nav__link[aria-current="page"]::after { transform: scaleX(1); }
 .nav__link:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
 
-/* Tra 840 e 1023px logo + quattro voci + bottone stanno su una riga solo con gap 24px */
-@media (max-width: 1023px) {
+/* Sotto 1200px logo + quattro voci + bottone stanno su una riga solo con gap 24px */
+@media (max-width: 1199px) {
   .nav__list { gap: var(--space-3); }
 }
 
@@ -188,9 +201,10 @@ fieldset { padding: 0; border: 0; min-width: 0; }
   padding: var(--space-3) 0;
   border-bottom: var(--border-deco);
 }
-.audience__item p { margin-bottom: var(--space-1); max-width: 52ch; }
+.audience__item p { max-width: 52ch; }
 
-@media (min-width: 600px) {
+/* Titolo e testo affiancati solo quando la colonna del testo resta sopra i 45 caratteri */
+@media (min-width: 600px) and (max-width: 839px), (min-width: 1200px) {
   .audience__item { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); }
 }
 @media (min-width: 840px) {
@@ -199,7 +213,7 @@ fieldset { padding: 0; border: 0; min-width: 0; }
 
 /* ---------- Servizi ---------- */
 .service { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-2); }
-.service > p { max-width: 60ch; }
+.service > p { max-width: 56ch; }
 .service .mm-link { margin-top: auto; }
 
 .service--main { padding: var(--space-5); gap: var(--space-3); }
@@ -214,12 +228,18 @@ fieldset { padding: 0; border: 0; min-width: 0; }
   font-variant-numeric: tabular-nums;
 }
 
-@media (min-width: 840px) {
+/* Sotto 1200px la colonna di AI e Consulenza scenderebbe a 25 caratteri per riga: blocchi impilati */
+@media (min-width: 1200px) {
   .service--main { grid-column: 1 / span 7; grid-row: 1 / span 2; }
   .service--focus,
   .service--small { grid-column: 8 / span 5; }
   .service--focus { align-self: start; }
   .service--small { align-self: end; }
+}
+/* Sotto 720px il titolo di sezione scende a 34px: i titoli dei servizi scalano di un livello */
+@media (max-width: 719px) {
+  .service--main h3 { font-size: var(--text-h3); line-height: var(--lh-h3); }
+  .service--focus h3 { font-size: var(--text-h4); line-height: var(--lh-h4); }
 }
 @media (max-width: 599px) {
   .service--main { padding: var(--space-3); }
@@ -241,6 +261,10 @@ fieldset { padding: 0; border: 0; min-width: 0; }
 
 @media (min-width: 840px) {
   .steps { grid-column: 6 / span 7; }
+}
+/* Sotto 600px il numero va sopra il titolo: la colonna da 56px toglieva un quarto della riga */
+@media (max-width: 599px) {
+  .step { grid-template-columns: minmax(0, 1fr); gap: var(--space-1); }
 }
 
 /* ---------- Citazione ---------- */
@@ -323,7 +347,8 @@ fieldset { padding: 0; border: 0; min-width: 0; }
 .choice__option:has(input:focus-visible) { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
 .choice[aria-invalid="true"] .choice__option { border: 2px solid var(--grafite); padding: 0 13px; }
 
-.mm-check { min-height: 44px; cursor: pointer; }
+.mm-field__hint { max-width: 56ch; }
+.mm-check { min-height: 44px; font-size: var(--text-small); cursor: pointer; }
 .mm-check input[aria-invalid="true"] { outline: 2px solid var(--grafite); outline-offset: 2px; }
 
 .form__done { display: grid; gap: var(--space-2); }
@@ -333,7 +358,8 @@ fieldset { padding: 0; border: 0; min-width: 0; }
   .form__row { grid-template-columns: 1fr 1fr; }
   .choice__options { grid-template-columns: 1fr 1fr; }
 }
-@media (min-width: 840px) {
+/* Modulo affiancato solo da 1200px: a 840px i due campi in riga sarebbero larghi 160px */
+@media (min-width: 1200px) {
   .contact__card { grid-column: 6 / span 7; }
 }
 @media (max-width: 599px) {

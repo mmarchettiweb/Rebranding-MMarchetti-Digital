@@ -12,12 +12,16 @@
   var menuBtn = document.querySelector('.menu-btn');
   var nav = document.getElementById('nav');
 
+  // Con il pannello aperto il contenuto sotto non deve ricevere il focus da tastiera
+  var behindMenu = [document.getElementById('main'), document.querySelector('.footer')];
+
   if (menuBtn && nav) {
     var setMenu = function (open) {
       menuBtn.setAttribute('aria-expanded', String(open));
       menuBtn.textContent = open ? 'Chiudi' : 'Menu';
       nav.classList.toggle('is-open', open);
       document.body.style.overflow = open ? 'hidden' : '';
+      behindMenu.forEach(function (el) { if (el) el.inert = open; });
     };
 
     menuBtn.addEventListener('click', function () {
@@ -116,6 +120,15 @@
     }
   }
 
+  // Uscendo da un campo compilato lo controllo subito (es. email incompleta);
+  // i campi vuoti si segnalano solo all'invio, per non dare errori a chi sta solo scorrendo
+  form.addEventListener('focusout', function (e) {
+    var name = e.target.name;
+    if ((name === 'nome' || name === 'email' || name === 'messaggio') && e.target.value.trim()) {
+      showError(name, rules[name]());
+    }
+  });
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     status.hidden = true;
@@ -127,7 +140,11 @@
     }
 
     var button = form.querySelector('button[type="submit"]');
+    var label = button.querySelector('.mm-btn__label');
+    var idleText = label.textContent;
     button.disabled = true;
+    label.textContent = 'Invio in corso…';
+    form.setAttribute('aria-busy', 'true');
 
     fetch('/', {
       method: 'POST',
@@ -144,6 +161,10 @@
         status.querySelector('span').textContent = 'la richiesta non è partita. Riprova tra qualche minuto o scrivimi a SEGNAPOSTO.';
         status.hidden = false;
         button.disabled = false;
+        label.textContent = idleText;
+      })
+      .then(function () {
+        form.removeAttribute('aria-busy');
       });
   });
 })();
