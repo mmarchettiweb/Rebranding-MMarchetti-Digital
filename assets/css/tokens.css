@@ -1,0 +1,258 @@
+/* ==========================================================================
+   MMarchetti Digital — brand Design System
+   colors_and_type.css · token riutilizzabili (colore, tipo, spazio, raggi, stati)
+   Fonte di verità: DESIGN.md. Palette chiusa: 7 colori, nessun altro.
+   Font: IBM Plex Sans / IBM Plex Mono (OFL) — file locali in fonts/.
+   Copia di _brand/colors_and_type.css: cambiano solo i percorsi dei font (../fonts/, solo woff2).
+   ========================================================================== */
+
+/* ---------- 1. Font (preservati in fonts/) ---------- */
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/IBMPlexSans-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/IBMPlexSans-Italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/IBMPlexSans-SemiBold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/IBMPlexSans-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/IBMPlexMono-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/IBMPlexMono-Medium.woff2") format("woff2");
+}
+
+:root {
+  /* ---------- 2. Palette (7 colori — DESIGN.md §2) ---------- */
+  --grafite:       #23211E; /* testo principale; fondo scuro solo per sezioni di contrasto */
+  --carta:         #F6F4EF; /* fondo principale */
+  --bianco:        #FFFFFF; /* superfici, card, campi */
+  --evidenziatore: #FFD43B; /* unico accento — mai testo su fondo chiaro */
+  --blu:           #2A5585; /* link, dati, grafici — solo su fondi chiari */
+  --grigio:        #5E5A54; /* testo secondario, bordi funzionali — solo su fondi chiari */
+  --linea:         #D9D5CC; /* divisori decorativi; testo secondario su Grafite */
+
+  /* ---------- 3. Ruoli semantici — tema chiaro (standard) ---------- */
+  --bg:             var(--carta);
+  --surface:        var(--bianco);
+  --fg:             var(--grafite);
+  --fg-muted:       var(--grigio);
+  --border:         var(--linea);   /* decorativo */
+  --border-strong:  var(--grigio);  /* funzionale: campi, controlli (≥3:1) */
+  --accent:         var(--evidenziatore);
+  --accent-fg:      var(--grafite); /* testo sopra l'accento */
+  --link:           var(--blu);
+  --focus-ring:     var(--blu);
+  --data:           var(--blu);
+
+  /* Stati: la palette è chiusa, quindi gli stati usano forma + testo + i 7 colori */
+  --state-info:     var(--blu);
+  --state-error:    var(--grafite); /* errore = bordo Grafite 2px + messaggio esplicito */
+  --state-success:  var(--grafite); /* successo = barra Evidenziatore + messaggio */
+  --state-disabled-fg: var(--grigio);
+  --state-disabled-bg: var(--carta);
+
+  /* ---------- 4. Tipografia ---------- */
+  --font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --font-display: var(--font-sans);
+  --font-body:    var(--font-sans);
+
+  /* scala web, base 16px, rapporto ~1.25 */
+  --text-display: 3.5rem;    /* 56px · lh 1.05 · 700 · -0.02em */
+  --text-h1:      2.75rem;   /* 44px · lh 1.1  · 700 · -0.015em */
+  --text-h2:      2rem;      /* 32px · lh 1.2  · 600 */
+  --text-h3:      1.5rem;    /* 24px · lh 1.3  · 600 */
+  --text-h4:      1.25rem;   /* 20px · lh 1.4  · 600 */
+  --text-body:    1.125rem;  /* 18px · lh 1.6  · 400 */
+  --text-small:   1rem;      /* 16px · lh 1.55 · 400 */
+  --text-label:   0.8125rem; /* 13px · lh 1.4  · Mono 500 · maiuscolo · +0.08em */
+
+  --lh-display: 1.05;
+  --lh-h1: 1.1;
+  --lh-h2: 1.2;
+  --lh-h3: 1.3;
+  --lh-h4: 1.4;
+  --lh-body: 1.6;
+  --lh-small: 1.55;
+  --lh-label: 1.4;
+
+  --track-display: -0.02em;
+  --track-h1: -0.015em;
+  --track-label: 0.08em;
+
+  --measure: 68ch;
+
+  /* slide 1920×1080 */
+  --slide-title: 72px;    /* 64–80px, Sans 700 */
+  --slide-body: 28px;     /* minimo 28px */
+  --slide-label: 22px;    /* minimo 22px, Mono 500 */
+
+  /* ---------- 5. Spazio, griglia, raggi, bordi, ombre ---------- */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+  --space-7: 96px;
+  --space-8: 128px;
+
+  --grid-columns: 12;
+  --grid-gutter: 24px;
+  --content-max: 1200px;
+  --page-margin-mobile: 16px;
+
+  --radius: 4px;          /* bottoni, card, campi — nessun pill */
+  --radius-none: 0;       /* barra evidenziatore, avatar */
+
+  --border-width: 1px;
+  --border-deco: 1px solid var(--linea);
+  --border-func: 1px solid var(--grigio);
+
+  --shadow-none: none;
+  --shadow-card: 0 1px 2px rgba(35, 33, 30, 0.08); /* unica ombra ammessa */
+
+  /* evidenziatore come sistema */
+  --highlight-height: 45%; /* dalla baseline fino a ~45% dell'altezza x */
+  --hover-bar: 3px;
+
+  /* ---------- 6. Movimento ---------- */
+  --dur-fast: 120ms;
+  --dur-base: 180ms;
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* ---------- 7. Tema scuro (sezione di contrasto, non tema globale) ---------- */
+.theme-grafite,
+[data-theme="grafite"] {
+  --bg:            var(--grafite);
+  --surface:       var(--grafite);
+  --fg:            var(--carta);
+  --fg-muted:      var(--linea);
+  --border:        rgba(217, 213, 204, 0.35);
+  --border-strong: var(--linea);
+  --link:          var(--evidenziatore);
+  --focus-ring:    var(--evidenziatore);
+  --data:          var(--evidenziatore);
+  background: var(--bg);
+  color: var(--fg);
+}
+
+@media (max-width: 720px) {
+  :root {
+    --text-display: 2.5rem; /* 40px */
+    --text-h1: 2.125rem;    /* 34px */
+  }
+}
+
+/* ---------- 8. Base tipografica riutilizzabile ---------- */
+.mm-body,
+.mm-root {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: var(--lh-body);
+  color: var(--fg);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.mm-display { font: 700 var(--text-display)/var(--lh-display) var(--font-display); letter-spacing: var(--track-display); text-wrap: balance; }
+.mm-h1      { font: 700 var(--text-h1)/var(--lh-h1) var(--font-display); letter-spacing: var(--track-h1); text-wrap: balance; }
+.mm-h2      { font: 600 var(--text-h2)/var(--lh-h2) var(--font-display); text-wrap: balance; }
+.mm-h3      { font: 600 var(--text-h3)/var(--lh-h3) var(--font-display); }
+.mm-h4      { font: 600 var(--text-h4)/var(--lh-h4) var(--font-display); }
+.mm-p       { font: 400 var(--text-body)/var(--lh-body) var(--font-body); max-width: var(--measure); text-wrap: pretty; }
+.mm-small   { font: 400 var(--text-small)/var(--lh-small) var(--font-body); }
+.mm-muted   { color: var(--fg-muted); }
+
+/* Etichetta di sezione: Mono maiuscolo, preceduta da numero — "01 — FORMAZIONE" */
+.mm-label {
+  font: 500 var(--text-label)/var(--lh-label) var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: var(--track-label);
+  color: var(--fg-muted);
+}
+
+/* Dato numerico: numero Mono 500 grande, etichetta Sans sotto */
+.mm-figure {
+  font: 500 var(--text-h1)/1 var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--fg);
+}
+
+/* Evidenziatore: barra piatta, angoli vivi, dietro il testo. Max 1 per blocco. */
+.mm-hl {
+  background-image: linear-gradient(var(--evidenziatore), var(--evidenziatore));
+  background-repeat: no-repeat;
+  background-size: 100% var(--highlight-height);
+  background-position: 0 88%;
+  padding: 0 0.12em;
+  margin: 0 -0.06em;
+  color: inherit;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+/* nota: il linear-gradient sopra è a un solo colore — una campitura piatta, non un gradiente */
+
+/* Su Grafite la barra parziale lascerebbe metà lettera Grafite su Grafite:
+   l'evidenza diventa un blocco pieno Evidenziatore con testo Grafite. */
+.theme-grafite .mm-hl,
+[data-theme="grafite"] .mm-hl {
+  background-size: 100% 100%;
+  background-position: 0 0;
+  color: var(--grafite);
+}
+
+/* Link: sempre sottolineati, 1px, offset 3px */
+.mm-link,
+.mm-root a:not([class]) {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+/* Focus da tastiera */
+.mm-root :focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mm-root *,
+  .mm-root *::before,
+  .mm-root *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
