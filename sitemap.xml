@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DOMINIO è un segnaposto: sostituirlo con il dominio reale prima della pubblicazione. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://DOMINIO/</loc></url>
+  <url><loc>https://DOMINIO/formazione/</loc></url>
+  <url><loc>https://DOMINIO/ai-in-pratica/</loc></url>
+  <url><loc>https://DOMINIO/consulenza/</loc></url>
+  <url><loc>https://DOMINIO/chi-sono/</loc></url>
+  <url><loc>https://DOMINIO/contatti/</loc></url>
+  <url><loc>https://DOMINIO/privacy/</loc></url>
+</urlset>

@@ -73,6 +73,8 @@ fieldset { padding: 0; border: 0; min-width: 0; }
 
 /* Link isolati (non dentro una frase): area di tocco 44px */
 .audience .mm-link,
+.rows .mm-link,
+.cta .mm-link,
 .service .mm-link {
   display: inline-flex;
   align-items: center;
@@ -181,9 +183,12 @@ fieldset { padding: 0; border: 0; min-width: 0; }
 .hero__title { max-width: 14ch; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-2); padding-top: var(--space-1); }
 
-.hero__facts { display: grid; border-top: 1px solid var(--grafite); }
-.hero__facts > div { display: grid; gap: 4px; padding: var(--space-2) 0; border-bottom: var(--border-deco); }
-.hero__facts dd { font-size: var(--text-small); line-height: var(--lh-small); }
+.hero__facts,
+.facts { display: grid; border-top: 1px solid var(--grafite); }
+.hero__facts > div,
+.facts > div { display: grid; gap: 4px; padding: var(--space-2) 0; border-bottom: var(--border-deco); }
+.hero__facts dd,
+.facts dd { font-size: var(--text-small); line-height: var(--lh-small); }
 
 @media (min-width: 840px) {
   .hero__main { grid-column: 1 / span 7; }
@@ -193,22 +198,28 @@ fieldset { padding: 0; border: 0; min-width: 0; }
   .hero { padding: var(--space-5) 0 var(--space-6); }
 }
 
-/* ---------- Per chi lavoro ---------- */
-.audience { border-top: 1px solid var(--grafite); }
-.audience__item {
+/* ---------- Per chi lavoro (e righe titolo + testo nelle pagine interne: .rows) ---------- */
+.audience,
+.rows { border-top: 1px solid var(--grafite); }
+.audience__item,
+.rows__item {
   display: grid;
   gap: var(--space-1) var(--space-3);
   padding: var(--space-3) 0;
   border-bottom: var(--border-deco);
 }
-.audience__item p { max-width: 52ch; }
+.audience__item p,
+.rows__item p { max-width: 52ch; }
+.rows__item p + p { margin-top: var(--space-1); }
 
 /* Titolo e testo affiancati solo quando la colonna del testo resta sopra i 45 caratteri */
 @media (min-width: 600px) and (max-width: 839px), (min-width: 1200px) {
-  .audience__item { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); }
+  .audience__item,
+  .rows__item { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); }
 }
 @media (min-width: 840px) {
-  .audience { grid-column: 6 / span 7; }
+  .audience,
+  .rows { grid-column: 6 / span 7; }
 }
 
 /* ---------- Servizi ---------- */
@@ -414,4 +425,122 @@ fieldset { padding: 0; border: 0; min-width: 0; }
 }
 @media (min-width: 600px) and (max-width: 839px) {
   .section { padding: var(--space-6) 0; }
+}
+
+/* ==========================================================================
+   Pagine interne: apertura, indice di pagina, blocchi, programma, invito al contatto,
+   segnaposto. Stessi token e stessi breakpoint della home.
+   ========================================================================== */
+
+/* ---------- Apertura di pagina: H1 con una evidenza, testo su 7 colonne, supporto su 4 ---------- */
+.page-head { padding: var(--space-7) 0 var(--space-6); }
+.page-head + .section { border-top: var(--border-deco); }
+.page-head__main { display: grid; gap: var(--space-3); align-content: start; }
+.page-head__title { max-width: 22ch; }
+.page-head__aside { align-self: end; }
+
+@media (min-width: 840px) {
+  .page-head__main { grid-column: 1 / span 7; }
+  .page-head__aside { grid-column: 9 / span 4; }
+}
+@media (max-width: 599px) {
+  .page-head { padding: var(--space-5) 0 var(--space-6); }
+}
+
+/* ---------- Indice di pagina (ancore) ---------- */
+.toc { display: grid; gap: var(--space-1); padding-top: var(--space-2); border-top: var(--border-deco); }
+.toc ul { display: flex; flex-wrap: wrap; gap: 0 var(--space-3); }
+.toc a { display: inline-flex; align-items: center; min-height: 44px; }
+
+/* ---------- Blocco con supporto a lato (Formazione: aziende, enti, scuole) ---------- */
+.block__main { display: grid; gap: var(--space-2); align-content: start; }
+.block__main > p { max-width: 60ch; }
+.block__main h2 { margin-bottom: var(--space-1); }
+.block__aside { align-self: start; }
+.block__aside > .mm-label { display: block; margin-bottom: var(--space-2); }
+.block__aside .proof { margin-top: var(--space-4); padding-top: 0; border-top: 0; }
+.proof:first-child { padding-top: 0; border-top: 0; }
+
+@media (min-width: 840px) {
+  .block__main { grid-column: 1 / span 7; }
+  .block__aside { grid-column: 9 / span 4; }
+}
+
+/* ---------- Elenchi semplici a righe ---------- */
+.list-lines { border-top: 1px solid var(--grafite); }
+.list-lines li { padding: var(--space-2) 0; border-bottom: var(--border-deco); max-width: 60ch; }
+
+/* Due elenchi affiancati (AI in pratica): 6 colonne + 5 colonne */
+.two-lists__col { display: grid; gap: var(--space-2); align-content: start; }
+@media (min-width: 840px) {
+  .two-lists__col:first-child { grid-column: 1 / span 6; }
+  .two-lists__col:last-child { grid-column: 8 / span 5; }
+}
+
+/* ---------- Esempio di programma ---------- */
+.program { display: grid; gap: var(--space-4); }
+.program__head { display: grid; gap: var(--space-2); justify-items: start; }
+.program__meta > div { display: grid; gap: 4px; padding: var(--space-2) 0; border-bottom: var(--border-deco); }
+.program__meta { border-top: 1px solid var(--grafite); }
+.program__meta ul { padding-left: 1.2em; }
+.program__table { width: 100%; border-collapse: collapse; }
+.program__table caption { text-align: left; margin-bottom: var(--space-2); }
+.program__table th,
+.program__table td {
+  padding: var(--space-2) var(--space-2) var(--space-2) 0;
+  border-bottom: var(--border-deco);
+  text-align: left;
+  vertical-align: top;
+}
+.program__table thead th { border-bottom: 1px solid var(--grafite); }
+.program__table td:last-child,
+.program__table th:last-child { width: 1%; white-space: nowrap; padding-right: 0; }
+.program__table td p { margin-top: 4px; color: var(--fg-muted); font-size: var(--text-small); line-height: var(--lh-small); }
+
+@media (min-width: 840px) {
+  .program { grid-column: 1 / span 10; }
+}
+
+/* ---------- Invito al contatto in fondo alle pagine ---------- */
+.cta { display: grid; gap: var(--space-3); justify-items: start; }
+.cta p { max-width: 56ch; }
+@media (min-width: 840px) {
+  .cta { grid-column: 1 / span 8; }
+}
+
+/* ---------- Segnaposto di contenuto (testi da scrivere con Marco) ---------- */
+.placeholder {
+  display: grid;
+  gap: var(--space-2);
+  justify-items: start;
+  padding: var(--space-4);
+  background: var(--bianco);
+  border: 1px dashed var(--grigio);
+  border-radius: var(--radius);
+}
+.placeholder p { max-width: 56ch; }
+@media (max-width: 599px) {
+  .placeholder { padding: var(--space-3); }
+}
+
+/* ---------- Chi sono: foto segnaposto ---------- */
+.about__photo { aspect-ratio: 16 / 10; }
+@media (min-width: 840px) {
+  .about__photo { grid-column: 9 / span 4; aspect-ratio: 4 / 5; align-self: end; }
+}
+
+/* ---------- Contatti: modulo su 7 colonne, informazioni su 4 ---------- */
+.contact-page__info { display: grid; gap: var(--space-4); align-content: start; }
+.contact-page__info h2 { margin-bottom: var(--space-2); }
+@media (min-width: 1200px) {
+  .contact-page__form { grid-column: 1 / span 7; }
+  .contact-page__info { grid-column: 9 / span 4; }
+}
+
+/* ---------- Testo lungo (privacy) ---------- */
+.prose { display: grid; gap: var(--space-3); max-width: var(--measure); }
+
+/* Contenuto nella colonna destra accanto a un titolo a lato (7 colonne da 840px) */
+@media (min-width: 840px) {
+  .side-content { grid-column: 6 / span 7; }
 }

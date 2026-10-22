@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contatti | MMarchetti Digital, Veneto e online</title>
+  <meta name="description" content="Scrivi a Marco Marchetti per un corso o una consulenza su comunicazione digitale e AI. Rispondo entro due giorni lavorativi.">
+  <link rel="canonical" href="https://DOMINIO/contatti/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="MMarchetti Digital">
+  <meta property="og:title" content="Contatti | MMarchetti Digital, Veneto e online">
+  <meta property="og:description" content="Scrivi a Marco Marchetti per un corso o una consulenza su comunicazione digitale e AI. Rispondo entro due giorni lavorativi.">
+  <meta property="og:url" content="https://DOMINIO/contatti/">
+  <meta name="theme-color" content="#F6F4EF">
+
+  <link rel="icon" href="../assets/logo/mmarchetti-avatar-400.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/icons/mmarchetti-avatar-400.png">
+
+  <link rel="preload" href="../assets/fonts/IBMPlexSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/IBMPlexSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body class="mm-root">
+  <a class="skip" href="#main">Vai al contenuto</a>
+
+  <header class="header">
+    <div class="container header__bar">
+      <a class="header__logo" href="/" aria-label="MMarchetti Digital, pagina iniziale">
+        <img src="../assets/logo/mmarchetti-digital-compatta.svg" alt="" width="185" height="26">
+      </a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav class="nav" id="nav" aria-label="Principale">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="/formazione/">Formazione</a></li>
+          <li><a class="nav__link" href="/ai-in-pratica/">AI in pratica</a></li>
+          <li><a class="nav__link" href="/consulenza/">Consulenza</a></li>
+          <li><a class="nav__link" href="/chi-sono/">Chi sono</a></li>
+          <li class="nav__cta"><a class="mm-btn" href="/contatti/" aria-current="page"><span class="mm-btn__label">Contattami</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Apertura: testo su 7 colonne, supporto su 4 -->
+    <section class="page-head" aria-labelledby="page-title">
+      <div class="container grid">
+        <div class="page-head__main">
+          <p class="mm-label">Contatti</p>
+          <h1 id="page-title" class="mm-h1 page-head__title">Raccontami <span class="mm-hl">il tuo caso</span></h1>
+          <p class="mm-p">Scrivimi cosa fa il tuo team e quale compito vorresti semplificare. Lavoro in Veneto, tra Venezia, Padova e Treviso, e online.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modulo su 7 colonne, informazioni su 4 -->
+    <section class="section" id="modulo" aria-labelledby="modulo-title">
+      <div class="container grid">
+        <div class="mm-card contact__card contact-page__form">
+          <h2 id="modulo-title" class="visually-hidden">Modulo di contatto</h2>
+          <form class="form" name="contatto" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-form>
+            <input type="hidden" name="form-name" value="contatto">
+            <p class="visually-hidden">
+              <label>Non compilare questo campo: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+            </p>
+            <p class="form__note mm-muted">Tutti i campi sono obbligatori.</p>
+
+            <div class="form__row">
+              <div class="mm-field">
+                <label class="mm-field__label" for="nome">Nome e cognome</label>
+                <input class="mm-input" id="nome" name="nome" type="text" autocomplete="name" required aria-describedby="nome-error">
+                <p class="mm-field__error" id="nome-error" hidden><strong>Errore:</strong> <span></span></p>
+              </div>
+              <div class="mm-field">
+                <label class="mm-field__label" for="email">Email</label>
+                <input class="mm-input" id="email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="email-error">
+                <p class="mm-field__error" id="email-error" hidden><strong>Errore:</strong> <span></span></p>
+              </div>
+            </div>
+
+            <fieldset class="mm-field choice" id="chi" aria-describedby="chi-error">
+              <legend class="mm-field__label">Chi sei</legend>
+              <div class="choice__options">
+                <label class="choice__option"><input type="radio" name="chi" value="Azienda" required> Azienda</label>
+                <label class="choice__option"><input type="radio" name="chi" value="Ente di formazione"> Ente di formazione</label>
+                <label class="choice__option"><input type="radio" name="chi" value="Scuola"> Scuola</label>
+                <label class="choice__option"><input type="radio" name="chi" value="Altro"> Altro</label>
+              </div>
+              <p class="mm-field__error" id="chi-error" hidden><strong>Errore:</strong> <span></span></p>
+            </fieldset>
+
+            <div class="mm-field">
+              <label class="mm-field__label" for="messaggio">Il tuo caso, in poche righe</label>
+              <p class="mm-field__hint" id="messaggio-hint">Per esempio: il compito che vorresti semplificare e quante persone coinvolge.</p>
+              <textarea class="mm-textarea" id="messaggio" name="messaggio" rows="5" required aria-describedby="messaggio-hint messaggio-error"></textarea>
+              <p class="mm-field__error" id="messaggio-error" hidden><strong>Errore:</strong> <span></span></p>
+            </div>
+
+            <div class="mm-field">
+              <label class="mm-check" for="privacy">
+                <input type="checkbox" id="privacy" name="privacy" value="sì" required aria-describedby="privacy-error">
+                <span>Ho letto l'<a class="mm-link" href="/privacy/">informativa privacy</a> e acconsento al trattamento dei miei dati per ricevere una risposta.</span>
+              </label>
+              <p class="mm-field__error" id="privacy-error" hidden><strong>Errore:</strong> <span></span></p>
+            </div>
+
+            <div class="form__actions">
+              <button class="mm-btn" type="submit"><span class="mm-btn__label">Invia la richiesta</span></button>
+              <p class="mm-field__error form__status" id="form-status" role="alert" hidden><strong>Errore:</strong> <span></span></p>
+            </div>
+          </form>
+
+          <div class="form__done" id="form-done" tabindex="-1" hidden>
+            <p><span class="mm-tag mm-tag--done">Fatto</span></p>
+            <p class="mm-h4">Ricevuto. Ti rispondo entro due giorni lavorativi.</p>
+          </div>
+        </div>
+
+        <div class="contact-page__info">
+          <div>
+            <h2 class="mm-h4">Cosa succede dopo l'invio</h2>
+            <ul class="list-lines" role="list">
+            <li>Ti rispondo entro due giorni lavorativi.</li>
+            <li><span class="mm-tag mm-tag--placeholder">SEGNAPOSTO</span> Passaggio successivo da confermare con Marco.</li>
+          </ul>
+          </div>
+          <div>
+            <h2 class="mm-h4">Scrivimi direttamente</h2>
+            <ul class="list-lines" role="list">
+            <li>Email: <span class="mm-tag mm-tag--placeholder">SEGNAPOSTO</span></li>
+            <li>LinkedIn: <span class="mm-tag mm-tag--placeholder">SEGNAPOSTO</span></li>
+          </ul>
+          </div>
+          <div>
+            <h2 class="mm-h4">Dove lavoro</h2>
+            <p>Venezia, Padova, Treviso e online.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer theme-grafite">
+    <div class="container grid">
+      <div class="footer__brand">
+        <img class="footer__logo" src="../assets/logo/mmarchetti-digital-negativa.svg" alt="MMarchetti Digital" width="240" height="27" loading="lazy">
+        <p>Comunicazione digitale e AI, in pratica.</p>
+        <p>Formazione e consulenza in Veneto e online.</p>
+      </div>
+      <nav class="footer__col footer__col--pages" aria-label="Pagine del sito">
+        <p class="mm-label">Pagine</p>
+        <ul role="list">
+          <li><a href="/formazione/">Formazione</a></li>
+          <li><a href="/ai-in-pratica/">AI in pratica</a></li>
+          <li><a href="/consulenza/">Consulenza</a></li>
+          <li><a href="/chi-sono/">Chi sono</a></li>
+        </ul>
+      </nav>
+      <div class="footer__col">
+        <p class="mm-label">Contatti</p>
+        <ul role="list">
+          <li>Email: SEGNAPOSTO</li>
+          <li>LinkedIn: SEGNAPOSTO</li>
+          <li><a href="/contatti/">Scrivimi dal modulo</a></li>
+        </ul>
+      </div>
+      <div class="footer__base">
+        <p>© 2026 Marco Marchetti · P.IVA SEGNAPOSTO</p>
+        <ul role="list">
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/cookie/">Cookie</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

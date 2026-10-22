@@ -1,0 +1,5 @@
+# DOMINIO è un segnaposto: sostituirlo con il dominio reale prima della pubblicazione.
+User-agent: *
+Allow: /
+
+Sitemap: https://DOMINIO/sitemap.xml
