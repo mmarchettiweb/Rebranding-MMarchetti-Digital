@@ -550,6 +550,27 @@ fieldset { padding: 0; border: 0; min-width: 0; }
 /* ---------- Testo lungo (privacy) ---------- */
 .prose { display: grid; gap: var(--space-3); max-width: var(--measure); }
 
+/* ---------- Pagine legali (privacy, cookie): etichetta numerata a lato, testo su 7 colonne ---------- */
+.legal { border-top: 1px solid var(--grafite); }
+.legal__item {
+  display: grid;
+  gap: var(--space-2) var(--grid-gutter);
+  padding: var(--space-4) 0;
+  border-bottom: var(--border-deco);
+}
+.legal__title { color: var(--fg); }
+.legal__item .prose { gap: var(--space-2); }
+.legal__item .prose ul { display: grid; gap: var(--space-1); padding-left: 1.2em; }
+@media (min-width: 840px) {
+  .legal__item { grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr)); }
+  .legal__title { grid-column: 1 / span 4; padding-top: 6px; }
+  .legal__item .prose { grid-column: 6 / span 7; }
+}
+
+/* "In breve" accanto al titolo della pagina */
+.summary { display: grid; gap: var(--space-2); align-content: start; }
+.summary .list-lines li { font-size: var(--text-small); line-height: var(--lh-small); }
+
 /* Contenuto nella colonna destra accanto a un titolo a lato (7 colonne da 840px) */
 @media (min-width: 840px) {
   .side-content { grid-column: 6 / span 7; }

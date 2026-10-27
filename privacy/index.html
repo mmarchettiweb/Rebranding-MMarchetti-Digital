@@ -47,37 +47,124 @@
   </header>
 
   <main id="main">
-    <!-- Apertura: testo su 7 colonne, supporto su 4 -->
+    <!-- Apertura: testo su 7 colonne, "In breve" su 4 -->
     <section class="page-head" aria-labelledby="page-title">
       <div class="container grid">
         <div class="page-head__main">
           <p class="mm-label">Privacy</p>
           <h1 id="page-title" class="mm-h1 page-head__title">Informativa privacy</h1>
-          <p class="mm-p">Ultimo aggiornamento: <span class="mm-tag mm-tag--placeholder">SEGNAPOSTO</span></p>
+          <p class="mm-p mm-muted">Ultimo aggiornamento: <span class="mm-tag mm-tag--placeholder">SEGNAPOSTO</span></p>
+          <p class="mm-p">Qui spiego quali dati personali raccolgo quando usi questo sito o mi scrivi dal modulo di contatto, perché li uso e per quanto tempo li conservo. È l'informativa prevista dall'art. 13 del Regolamento (UE) 2016/679 (GDPR).</p>
+          <nav class="toc" aria-label="In questa pagina">
+            <p class="mm-label">In questa pagina</p>
+            <ul role="list">
+              <li><a class="mm-link" href="#titolare">Chi tratta i dati</a></li>
+              <li><a class="mm-link" href="#dati">Quali dati raccolgo</a></li>
+              <li><a class="mm-link" href="#finalita">Perché li uso</a></li>
+              <li><a class="mm-link" href="#destinatari">A chi arrivano</a></li>
+              <li><a class="mm-link" href="#conservazione">Per quanto tempo</a></li>
+              <li><a class="mm-link" href="#diritti">I tuoi diritti</a></li>
+              <li><a class="mm-link" href="#facoltativo">Se non mi dai i dati</a></li>
+              <li><a class="mm-link" href="#cookie">Cookie</a></li>
+              <li><a class="mm-link" href="#modifiche">Modifiche</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="summary page-head__aside">
+          <h2 class="mm-label">In breve</h2>
+          <ul class="list-lines" role="list">
+            <li>Raccolgo solo i dati che mi invii tu dal modulo.</li>
+            <li>Li uso solo per risponderti.</li>
+            <li>Questo sito non usa cookie di profilazione né strumenti di analisi.</li>
+            <li>Puoi chiedermi in ogni momento di vedere, correggere o cancellare i tuoi dati.</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!--
-      DATI CHE SERVONO PER SCRIVERE L'INFORMATIVA
-      - Titolare del trattamento: Marco Marchetti (nome, indirizzo)
-      - P.IVA
-      - Email di contatto per le richieste privacy
-      - Dati raccolti dal modulo di contatto: nome e cognome, email, "chi sei"
-        (azienda / ente di formazione / scuola / altro), messaggio, consenso privacy
-      - Finalità: rispondere alla richiesta di contatto
-      - Fornitore che riceve i dati: Netlify (hosting del sito e ricezione dei moduli
-        con Netlify Forms), con server anche fuori dall'UE
-      - Tempi di conservazione dei messaggi ricevuti
-      - Cookie: da verificare (al momento il sito non usa strumenti di analisi)
-      - Diritti dell'interessato e modalità per esercitarli
-    -->
-    <section class="section" aria-labelledby="testo-title">
+    <section class="section" aria-label="Testo dell'informativa">
       <div class="container">
-        <div class="placeholder prose">
-          <span class="mm-tag mm-tag--placeholder">SEGNAPOSTO</span>
-          <h2 id="testo-title" class="mm-h3">Testo dell'informativa</h2>
-          <p>Informativa da inserire. Generarla con un servizio dedicato o con un professionista.</p>
+        <div class="legal">
+          <div class="legal__item" id="titolare">
+            <h2 class="mm-label legal__title">01 — Chi tratta i dati</h2>
+            <div class="prose">
+              <p>Il titolare del trattamento sono io: Marco Marchetti, partita IVA 02900680303, con sede in <span class="mm-tag mm-tag--placeholder">SEGNAPOSTO</span>. Per qualsiasi richiesta sui tuoi dati scrivimi a <span class="mm-tag mm-tag--placeholder">SEGNAPOSTO</span>.</p>
+            </div>
+          </div>
+
+          <div class="legal__item" id="dati">
+            <h2 class="mm-label legal__title">02 — Quali dati raccolgo</h2>
+            <div class="prose">
+              <p>Dal modulo di contatto: nome e cognome, indirizzo email, il tipo di richiesta (azienda, ente di formazione, scuola, altro) e il testo del messaggio.</p>
+              <p>Nel messaggio scrivi solo ciò che serve. Non inserire dati di altre persone (clienti, colleghi, partecipanti) né dati particolari, per esempio sulla salute o sulle opinioni politiche.</p>
+              <p>Dati tecnici: il fornitore di hosting registra nei log del server l'indirizzo IP, la data e l'ora, la pagina richiesta e il tipo di browser. Servono alla sicurezza e al funzionamento del sito. Io non li uso per identificarti né per fare statistiche.</p>
+            </div>
+          </div>
+
+          <div class="legal__item" id="finalita">
+            <h2 class="mm-label legal__title">03 — Perché li uso e su quale base</h2>
+            <div class="prose">
+              <p>Uso i dati del modulo solo per leggere la tua richiesta, risponderti ed eventualmente prepararti un programma o un preventivo. La base giuridica è l'art. 6, par. 1, lett. b) del GDPR: misure precontrattuali adottate su tua richiesta.</p>
+              <p>I dati tecnici dei log sono trattati per il legittimo interesse alla sicurezza e al funzionamento del sito (art. 6, par. 1, lett. f).</p>
+              <p>Non uso i tuoi dati per newsletter, pubblicità o profilazione e non li cedo a terzi per scopi loro. Se un giorno volessi inviarti comunicazioni commerciali, lo farei solo con un tuo consenso separato.</p>
+            </div>
+          </div>
+
+          <div class="legal__item" id="destinatari">
+            <h2 class="mm-label legal__title">04 — A chi arrivano i dati</h2>
+            <div class="prose">
+              <p>I dati sono trattati da me. Per far funzionare il sito, il modulo e la posta mi appoggio a fornitori di servizi tecnici: il fornitore di hosting, il servizio che riceve e inoltra il modulo e il servizio di posta elettronica con cui ti rispondo.</p>
+              <p>Il modulo di contatto passa da servizi Google (Apps Script, Gmail e Fogli Google): Google riceve il messaggio, me lo inoltra per email e ne conservo una copia in un foglio del mio account, protetto da accesso personale.</p>
+              <p>L'elenco aggiornato dei fornitori è disponibile su richiesta.</p>
+              <p>Alcuni fornitori hanno sede o infrastrutture fuori dallo Spazio economico europeo, per esempio negli Stati Uniti. In questi casi il trasferimento avviene con le garanzie previste dal GDPR (decisione di adeguatezza della Commissione europea o clausole contrattuali tipo).</p>
+            </div>
+          </div>
+
+          <div class="legal__item" id="conservazione">
+            <h2 class="mm-label legal__title">05 — Per quanto tempo li conservo</h2>
+            <div class="prose">
+              <p>Se la tua richiesta non porta a un incarico, conservo il messaggio per 12 mesi dall'ultimo contatto, poi cancello il messaggio e ogni sua copia.</p>
+              <p>Se porta a un incarico, conservo i dati per la durata del rapporto e poi per il tempo richiesto dagli obblighi di legge. Per i documenti contabili e fiscali sono in genere 10 anni.</p>
+              <p>I log tecnici dell'hosting seguono i tempi del fornitore.</p>
+            </div>
+          </div>
+
+          <div class="legal__item" id="diritti">
+            <h2 class="mm-label legal__title">06 — I tuoi diritti</h2>
+            <div class="prose">
+              <p>Puoi chiedermi in qualsiasi momento di:</p>
+              <ul>
+                <li>sapere quali dati ho su di te e riceverne una copia;</li>
+                <li>correggerli;</li>
+                <li>cancellarli;</li>
+                <li>limitarne l'uso;</li>
+                <li>riceverli in un formato leggibile da un computer (portabilità);</li>
+                <li>oppormi al trattamento fondato sul legittimo interesse.</li>
+              </ul>
+              <p>Scrivimi a <span class="mm-tag mm-tag--placeholder">SEGNAPOSTO</span>: ti rispondo entro un mese. Se ritieni che il trattamento violi la normativa, puoi presentare reclamo al Garante per la protezione dei dati personali (<a class="mm-link" href="https://www.garanteprivacy.it/" rel="noopener">garanteprivacy.it</a>).</p>
+            </div>
+          </div>
+
+          <div class="legal__item" id="facoltativo">
+            <h2 class="mm-label legal__title">07 — Se non mi dai i dati</h2>
+            <div class="prose">
+              <p>Compilare il modulo è facoltativo. Senza nome ed email però non posso risponderti. Non uso processi decisionali automatizzati né profilazione.</p>
+            </div>
+          </div>
+
+          <div class="legal__item" id="cookie">
+            <h2 class="mm-label legal__title">08 — Cookie</h2>
+            <div class="prose">
+              <p>Come funziona il sito rispetto ai cookie è spiegato nella <a class="mm-link" href="../cookie/">pagina Cookie</a>.</p>
+            </div>
+          </div>
+
+          <div class="legal__item" id="modifiche">
+            <h2 class="mm-label legal__title">09 — Modifiche</h2>
+            <div class="prose">
+              <p>Se cambia qualcosa, per esempio un fornitore, aggiorno questa pagina e la data in alto.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
