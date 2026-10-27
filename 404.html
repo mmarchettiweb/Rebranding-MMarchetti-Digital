@@ -1,3 +1,4 @@
+<!-- STAGING: URL assolute con host github.io; al lancio sostituire con il dominio definitivo -->
 <!doctype html>
 <html lang="it">
 <head>
@@ -5,54 +6,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pagina non trovata | MMarchetti Digital</title>
   <meta name="description" content="La pagina che cerchi non esiste o è stata spostata.">
+  <!-- noindex resta anche dopo il lancio: questa pagina non va mai indicizzata -->
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="#F6F4EF">
 
-  <link rel="icon" href="/assets/logo/mmarchetti-avatar-400.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/assets/icons/mmarchetti-avatar-400.png">
+  <!-- GitHub Pages serve questa pagina a qualsiasi profondità di indirizzo:
+       percorsi relativi e <base href> non funzionerebbero, quindi tutto è assoluto -->
+  <link rel="icon" href="https://mmarchettiweb.github.io/Rebranding-MMarchetti-Digital/assets/logo/mmarchetti-avatar-400.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="https://mmarchettiweb.github.io/Rebranding-MMarchetti-Digital/assets/icons/mmarchetti-avatar-400.png">
 
-  <link rel="preload" href="/assets/fonts/IBMPlexSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/IBMPlexSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/css/tokens.css">
-  <link rel="stylesheet" href="/assets/css/components.css">
-  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="preload" href="https://mmarchettiweb.github.io/Rebranding-MMarchetti-Digital/assets/fonts/IBMPlexSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://mmarchettiweb.github.io/Rebranding-MMarchetti-Digital/assets/fonts/IBMPlexSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="https://mmarchettiweb.github.io/Rebranding-MMarchetti-Digital/assets/css/tokens.css">
+  <link rel="stylesheet" href="https://mmarchettiweb.github.io/Rebranding-MMarchetti-Digital/assets/css/components.css">
+  <link rel="stylesheet" href="https://mmarchettiweb.github.io/Rebranding-MMarchetti-Digital/assets/css/site.css">
   <script>document.documentElement.classList.add('js');</script>
-  <script src="/assets/js/main.js" defer></script>
+  <script src="https://mmarchettiweb.github.io/Rebranding-MMarchetti-Digital/assets/js/main.js" defer></script>
 </head>
 <body class="mm-root">
   <a class="skip" href="#main">Vai al contenuto</a>
 
   <header class="header">
     <div class="container header__bar">
-      <a class="header__logo" href="/" aria-label="MMarchetti Digital, pagina iniziale">
-        <img src="/assets/logo/mmarchetti-digital-compatta.svg" alt="" width="185" height="26">
+      <a class="header__logo" href="https://mmarchettiweb.github.io/Rebranding-MMarchetti-Digital/" aria-label="MMarchetti Digital, pagina iniziale">
+        <img src="https://mmarchettiweb.github.io/Rebranding-MMarchetti-Digital/assets/logo/mmarchetti-digital-compatta.svg" alt="" width="185" height="26">
       </a>
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
       <nav class="nav" id="nav" aria-label="Principale">
         <ul class="nav__list">
-          <li><a class="nav__link" href="/formazione/">Formazione</a></li>
-          <li><a class="nav__link" href="/ai-in-pratica/">AI in pratica</a></li>
-          <li><a class="nav__link" href="/consulenza/">Consulenza</a></li>
-          <li><a class="nav__link" href="/chi-sono/">Chi sono</a></li>
-          <li class="nav__cta"><a class="mm-btn" href="/contatti/"><span class="mm-btn__label">Contattami</span></a></li>
+          <li><a class="nav__link" href="https://mmarchettiweb.github.io/Rebranding-MMarchetti-Digital/formazione/">Formazione</a></li>
+          <li><a class="nav__link" href="https://mmarchettiweb.github.io/Rebranding-MMarchetti-Digital/ai-in-pratica/">AI in pratica</a></li>
+          <li><a class="nav__link" href="https://mmarchettiweb.github.io/Rebranding-MMarchetti-Digital/consulenza/">Consulenza</a></li>
+          <li><a class="nav__link" href="https://mmarchettiweb.github.io/Rebranding-MMarchetti-Digital/chi-sono/">Chi sono</a></li>
+          <li class="nav__cta"><a class="mm-btn" href="https://mmarchettiweb.github.io/Rebranding-MMarchetti-Digital/contatti/"><span class="mm-btn__label">Contattami</span></a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <!-- Apertura: testo su 7 colonne, supporto su 4 -->
+    <!-- Apertura: testo su 7 colonne -->
     <section class="page-head" aria-labelledby="page-title">
       <div class="container grid">
         <div class="page-head__main">
           <p class="mm-label">Errore 404</p>
-          <h1 id="page-title" class="mm-h1 page-head__title">Pagina non trovata</h1>
-          <p class="mm-p">La pagina che cerchi non esiste o è stata spostata.</p>
-          <ul class="toc" role="list">
-            <li><a class="mm-link" href="/">Torna alla pagina iniziale</a></li>
-            <li><a class="mm-link" href="/formazione/">Formazione</a></li>
-            <li><a class="mm-link" href="/contatti/">Contatti</a></li>
+          <h1 id="page-title" class="mm-h1 page-head__title">Questa pagina <span class="mm-hl">non c'è</span>.</h1>
+          <p class="mm-p">L'indirizzo che hai aperto non esiste, oppure l'ho spostato. Da qui puoi arrivare dove ti serve:</p>
+          <ul class="list-lines list-lines--links" role="list">
+            <li><a class="mm-link" href="https://mmarchettiweb.github.io/Rebranding-MMarchetti-Digital/">Home</a></li>
+            <li><a class="mm-link" href="https://mmarchettiweb.github.io/Rebranding-MMarchetti-Digital/formazione/">Formazione</a></li>
+            <li><a class="mm-link" href="https://mmarchettiweb.github.io/Rebranding-MMarchetti-Digital/ai-in-pratica/">AI in pratica</a></li>
+            <li><a class="mm-link" href="https://mmarchettiweb.github.io/Rebranding-MMarchetti-Digital/consulenza/">Consulenza</a></li>
+            <li><a class="mm-link" href="https://mmarchettiweb.github.io/Rebranding-MMarchetti-Digital/chi-sono/">Chi sono</a></li>
+            <li><a class="mm-link" href="https://mmarchettiweb.github.io/Rebranding-MMarchetti-Digital/contatti/">Contatti</a></li>
           </ul>
+          <p class="mm-p">Se sei arrivato qui da un link che ho condiviso io, scrivimi: lo sistemo.</p>
+          <div class="page-head__actions">
+            <a class="mm-btn" href="https://mmarchettiweb.github.io/Rebranding-MMarchetti-Digital/"><span class="mm-btn__label">Torna alla home</span></a>
+            <a class="mm-btn mm-btn--secondary" href="https://mmarchettiweb.github.io/Rebranding-MMarchetti-Digital/contatti/"><span class="mm-btn__label">Vai ai contatti</span></a>
+          </div>
         </div>
       </div>
     </section>
@@ -61,17 +73,17 @@
   <footer class="footer theme-grafite">
     <div class="container grid">
       <div class="footer__brand">
-        <img class="footer__logo" src="/assets/logo/mmarchetti-digital-negativa.svg" alt="MMarchetti Digital" width="240" height="27" loading="lazy">
+        <img class="footer__logo" src="https://mmarchettiweb.github.io/Rebranding-MMarchetti-Digital/assets/logo/mmarchetti-digital-negativa.svg" alt="MMarchetti Digital" width="240" height="27" loading="lazy">
         <p>Comunicazione digitale e AI, in pratica.</p>
         <p>Formazione e consulenza in Veneto e online.</p>
       </div>
       <nav class="footer__col footer__col--pages" aria-label="Pagine del sito">
         <p class="mm-label">Pagine</p>
         <ul role="list">
-          <li><a href="/formazione/">Formazione</a></li>
-          <li><a href="/ai-in-pratica/">AI in pratica</a></li>
-          <li><a href="/consulenza/">Consulenza</a></li>
-          <li><a href="/chi-sono/">Chi sono</a></li>
+          <li><a href="https://mmarchettiweb.github.io/Rebranding-MMarchetti-Digital/formazione/">Formazione</a></li>
+          <li><a href="https://mmarchettiweb.github.io/Rebranding-MMarchetti-Digital/ai-in-pratica/">AI in pratica</a></li>
+          <li><a href="https://mmarchettiweb.github.io/Rebranding-MMarchetti-Digital/consulenza/">Consulenza</a></li>
+          <li><a href="https://mmarchettiweb.github.io/Rebranding-MMarchetti-Digital/chi-sono/">Chi sono</a></li>
         </ul>
       </nav>
       <div class="footer__col">
@@ -79,14 +91,14 @@
         <ul role="list">
           <li>Email: SEGNAPOSTO</li>
           <li>LinkedIn: SEGNAPOSTO</li>
-          <li><a href="/contatti/">Scrivimi dal modulo</a></li>
+          <li><a href="https://mmarchettiweb.github.io/Rebranding-MMarchetti-Digital/contatti/">Scrivimi dal modulo</a></li>
         </ul>
       </div>
       <div class="footer__base">
         <p>© 2026 Marco Marchetti · P.IVA SEGNAPOSTO</p>
         <ul role="list">
-          <li><a href="/privacy/">Privacy</a></li>
-          <li><a href="/cookie/">Cookie</a></li>
+          <li><a href="https://mmarchettiweb.github.io/Rebranding-MMarchetti-Digital/privacy/">Privacy</a></li>
+          <li><a href="https://mmarchettiweb.github.io/Rebranding-MMarchetti-Digital/cookie/">Cookie</a></li>
         </ul>
       </div>
     </div>

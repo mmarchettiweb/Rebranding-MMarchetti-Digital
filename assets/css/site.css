@@ -192,7 +192,8 @@ fieldset { padding: 0; border: 0; min-width: 0; }
 }
 .hero__main { display: grid; gap: var(--space-3); }
 .hero__title { max-width: 14ch; }
-.hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-2); padding-top: var(--space-1); }
+.hero__actions,
+.page-head__actions { display: flex; flex-wrap: wrap; gap: var(--space-2); padding-top: var(--space-1); }
 
 .hero__facts,
 .facts { display: grid; border-top: 1px solid var(--grafite); }
@@ -479,6 +480,10 @@ fieldset { padding: 0; border: 0; min-width: 0; }
 /* ---------- Elenchi semplici a righe ---------- */
 .list-lines { border-top: 1px solid var(--grafite); }
 .list-lines li { padding: var(--space-2) 0; border-bottom: var(--border-deco); max-width: 60ch; }
+
+/* Elenco di soli link (404): il link occupa tutta la riga, alta 48px */
+.list-lines--links li { padding: 0; }
+.list-lines--links a { display: flex; align-items: center; min-height: 48px; }
 
 /* Due elenchi affiancati (AI in pratica): 6 colonne + 5 colonne */
 .two-lists__col { display: grid; gap: var(--space-2); align-content: start; }
