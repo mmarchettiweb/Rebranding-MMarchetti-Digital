@@ -544,6 +544,9 @@ fieldset { padding: 0; border: 0; min-width: 0; }
 /* ---------- Contatti: modulo su 7 colonne, informazioni su 4 ---------- */
 .contact-page__info { display: grid; gap: var(--space-4); align-content: start; }
 .contact-page__info h2 { margin-bottom: var(--space-2); }
+/* Email e LinkedIn sono link isolati: area di tocco 44px, riga alta come le altre */
+.contact-page__info .list-lines li:has(> a) { padding: var(--space-1) 0; }
+.contact-page__info .list-lines a { display: inline-flex; align-items: center; min-height: 44px; }
 @media (min-width: 1200px) {
   .contact-page__form { grid-column: 1 / span 7; }
   .contact-page__info { grid-column: 9 / span 4; }
