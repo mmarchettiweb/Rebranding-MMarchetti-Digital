@@ -158,7 +158,7 @@
         done.focus();
       })
       .catch(function () {
-        status.querySelector('span').textContent = 'la richiesta non è partita. Riprova tra qualche minuto o scrivimi a SEGNAPOSTO.';
+        status.querySelector('span').textContent = 'la richiesta non è partita. Riprova tra qualche minuto o scrivimi a mmarchetti.web@gmail.com.';
         status.hidden = false;
         button.disabled = false;
         label.textContent = idleText;
