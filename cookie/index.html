@@ -60,7 +60,7 @@
         <div class="page-head__main">
           <p class="mm-label">Cookie</p>
           <h1 id="page-title" class="mm-h1 page-head__title">Cookie</h1>
-          <p class="mm-p mm-muted">Ultimo aggiornamento: <span class="mm-tag mm-tag--placeholder">SEGNAPOSTO</span></p>
+          <p class="mm-p mm-muted">Ultimo aggiornamento: <span class="mm-tag mm-tag--placeholder">[DATA DA COMPLETARE]</span></p>
           <div class="summary">
             <h2 class="mm-label">In breve</h2>
             <p class="mm-p">Questo sito non usa cookie di profilazione, né cookie di analisi o di terze parti. Per questo non trovi nessun banner da accettare.</p>
@@ -91,8 +91,20 @@
           <div class="legal__item" id="questo-sito">
             <h2 class="mm-label legal__title">02 — Cosa usa questo sito</h2>
             <div class="prose">
-              <p>Nessun cookie. Il sito non salva nulla sul tuo dispositivo per riconoscerti o tracciarti. I caratteri sono serviti dal sito stesso, senza passare da servizi esterni. Non ci sono mappe, video o pulsanti social incorporati e non uso Google Analytics o strumenti simili.</p>
-              <p>Se usi il modulo di contatto, i dati che scrivi sono trattati come spiegato nell'<a class="mm-link" href="../privacy/">informativa privacy</a>.</p>
+              <!-- Verificato il 23/11/2026: nessuna intestazione Set-Cookie dalle pagine e dai file su GitHub Pages,
+                   nessun uso di localStorage/sessionStorage in assets/js/main.js, nessuna risorsa caricata da domini esterni.
+                   Da ricontrollare se si aggiungono font, video, mappe, statistiche o widget. -->
+              <p>Nessun cookie. Il sito non salva nulla sul tuo dispositivo per riconoscerti o tracciarti, né con i cookie né con altri sistemi di memoria del browser.</p>
+              <ul>
+                <li><strong>Hosting:</strong> il sito è ospitato su GitHub Pages, che non imposta cookie sulle pagine.</li>
+                <li><strong>Caratteri:</strong> sono serviti dal sito stesso, senza passare da servizi esterni come Google Fonts.</li>
+                <li><strong>Contenuti incorporati:</strong> non ci sono mappe, video o pulsanti social incorporati. I link a LinkedIn sono link normali e non caricano nulla finché non li apri.</li>
+                <li><strong>Statistiche:</strong> non uso Google Analytics né strumenti simili.</li>
+                <!-- SEGNALATO AL TITOLARE, NON ANCORA DECISO: con JavaScript disattivato il modulo apre una pagina di
+                     Formspree (formspree.io), che può usare propri cookie e un controllo antispam (reCAPTCHA di Google). -->
+                <li><strong>Modulo di contatto:</strong> quando lo invii, i dati partono da questa pagina verso Formspree, il servizio che mi inoltra i messaggi. L'invio non salva cookie sul tuo dispositivo.</li>
+              </ul>
+              <p>I dati che scrivi nel modulo sono trattati come spiegato nell'<a class="mm-link" href="../privacy/">informativa privacy</a>.</p>
             </div>
           </div>
 

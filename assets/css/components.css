@@ -57,7 +57,8 @@
   cursor: not-allowed;
   transform: none;
 }
-.mm-btn[disabled] .mm-btn__label::after { display: none; }
+.mm-btn[disabled] .mm-btn__label::after,
+.mm-btn[aria-disabled="true"] .mm-btn__label::after { display: none; }
 
 /* ---------- Link ---------- */
 .mm-link {

@@ -377,6 +377,18 @@ fieldset { padding: 0; border: 0; min-width: 0; }
 .form__done { display: grid; gap: var(--space-2); }
 .form__done:focus { outline: none; }
 
+/* Campo antispam _gotcha: fuori schermo, non raggiungibile da tastiera né da screen reader */
+.form__trap {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+/* Esito dell'invio: la regione aria-live resta sempre visibile (anche vuota) per essere annunciata */
+.form__status { font: 400 var(--text-small)/1.5 var(--font-sans); color: var(--grafite); max-width: 56ch; }
+.form__status strong { font-weight: 600; }
+
 @media (min-width: 600px) {
   .form__row { grid-template-columns: 1fr 1fr; }
   .choice__options { grid-template-columns: 1fr 1fr; }
@@ -531,6 +543,9 @@ fieldset { padding: 0; border: 0; min-width: 0; }
   border-radius: var(--radius);
 }
 .placeholder p { max-width: 56ch; }
+/* Segnaposto lunghi dentro un testo (privacy, cookie): vanno a capo senza sovrapporsi */
+.prose .mm-tag--placeholder,
+.page-head .mm-tag--placeholder { line-height: 1.5; white-space: normal; }
 @media (max-width: 599px) {
   .placeholder { padding: var(--space-3); }
 }

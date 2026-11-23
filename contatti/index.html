@@ -71,11 +71,14 @@
         <div class="mm-card contact__card contact-page__form">
           <h2 id="modulo-title" class="visually-hidden">Modulo di contatto</h2>
           <!-- FORM sincronizzato con index.html e contatti/index.html: modificare entrambi -->
-          <form class="form" name="contatto" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-form>
-            <input type="hidden" name="form-name" value="contatto">
-            <p class="visually-hidden">
-              <label>Non compilare questo campo: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
-            </p>
+          <!-- Invio a Formspree. Senza JavaScript il browser fa il normale invio POST all'action -->
+          <form class="form" name="contatto" action="https://formspree.io/f/moedpnve" method="POST" data-form>
+            <input type="hidden" name="_subject" value="Nuova richiesta dal sito MMarchetti Digital">
+            <!-- Antispam: le persone non vedono il campo, i bot che lo compilano vengono scartati da Formspree -->
+            <div class="form__trap" aria-hidden="true">
+              <label for="_gotcha-contatti">Non compilare questo campo</label>
+              <input id="_gotcha-contatti" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+            </div>
             <p class="form__note mm-muted">Tutti i campi sono obbligatori.</p>
 
             <div class="form__row">
@@ -112,20 +115,24 @@
             <div class="mm-field">
               <label class="mm-check" for="privacy">
                 <input type="checkbox" id="privacy" name="privacy" value="sì" required aria-describedby="privacy-error">
-                <span>Ho letto l'<a class="mm-link" href="../privacy/">informativa privacy</a> e acconsento al trattamento dei miei dati per ricevere una risposta.</span>
+                <span>Ho letto l'<a class="mm-link" href="../privacy/" target="_blank" rel="noopener">informativa privacy<span class="visually-hidden"> (si apre in una nuova scheda)</span></a>: i miei dati servono solo a ricevere una risposta.</span>
               </label>
               <p class="mm-field__error" id="privacy-error" hidden><strong>Errore:</strong> <span></span></p>
             </div>
 
             <div class="form__actions">
               <button class="mm-btn" type="submit"><span class="mm-btn__label">Invia la richiesta</span></button>
-              <p class="mm-field__error form__status" id="form-status" role="alert" hidden><strong>Errore:</strong> <span></span></p>
+              <!-- Esito dell'invio: la regione resta nel DOM, lo script ne cambia solo il testo -->
+              <div class="form__status" id="form-status" aria-live="polite" aria-atomic="true"></div>
             </div>
           </form>
 
-          <div class="form__done" id="form-done" tabindex="-1" hidden>
-            <p><span class="mm-tag mm-tag--done">Fatto</span></p>
-            <p class="mm-h4">Ricevuto. Ti rispondo entro due giorni lavorativi.</p>
+          <div aria-live="polite">
+            <div class="form__done" id="form-done" tabindex="-1" hidden>
+              <p><span class="mm-tag mm-tag--done">Fatto</span></p>
+              <p class="mm-h4">Ricevuto. Ti rispondo entro due giorni lavorativi.</p>
+              <p class="mm-muted">Se non ricevi la mia risposta entro quel tempo, controlla lo spam o scrivimi a <a class="mm-link" href="mailto:mmarchetti.web@gmail.com">mmarchetti.web@gmail.com</a>.</p>
+            </div>
           </div>
         </div>
 

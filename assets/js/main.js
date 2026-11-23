@@ -1,8 +1,9 @@
 /* ==========================================================================
    MMarchetti Digital — script del sito
    1. Menu mobile (sotto 840px): bottone Menu/Chiudi, Esc chiude.
-   2. Modulo di contatto: convalida con messaggi "Errore: …", invio a Netlify Forms.
-   Senza JavaScript il menu resta visibile e il modulo usa la convalida del browser.
+   2. Modulo di contatto: convalida con messaggi "Errore: …", invio a Formspree con fetch.
+   Senza JavaScript il menu resta visibile e il modulo usa la convalida del browser
+   e il normale invio POST all'action del form (pagina di conferma di Formspree).
    ========================================================================== */
 
 (function () {
@@ -74,7 +75,7 @@
       return form.messaggio.value.trim() ? '' : 'scrivi due righe sul tuo caso.';
     },
     privacy: function () {
-      return form.privacy.checked ? '' : 'per inviare la richiesta serve il consenso al trattamento dei dati.';
+      return form.privacy.checked ? '' : 'per inviare la richiesta conferma di aver letto l\'informativa privacy.';
     }
   };
 
@@ -129,9 +130,22 @@
     }
   });
 
+  // Mostra un errore d'invio nella regione aria-live (testo costruito senza innerHTML)
+  function showStatus(message) {
+    status.textContent = '';
+    if (!message) return;
+    var strong = document.createElement('strong');
+    strong.textContent = 'Errore:';
+    status.appendChild(strong);
+    status.appendChild(document.createTextNode(' ' + message));
+  }
+
+  var sending = false;
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    status.hidden = true;
+    if (sending) return; // evita il doppio invio (doppio clic o Invio ripetuto)
+    showStatus('');
 
     var firstInvalid = validate();
     if (firstInvalid) {
@@ -142,28 +156,33 @@
     var button = form.querySelector('button[type="submit"]');
     var label = button.querySelector('.mm-btn__label');
     var idleText = label.textContent;
-    button.disabled = true;
+    // aria-disabled invece di disabled: il bottone resta disabilitato per clic e screen reader
+    // (il doppio invio è bloccato da `sending`) ma non perde il focus da tastiera
+    sending = true;
+    button.setAttribute('aria-disabled', 'true');
     label.textContent = 'Invio in corso…';
     form.setAttribute('aria-busy', 'true');
 
-    fetch('/', {
+    // Formspree risponde in JSON solo con Accept: application/json; FormData parte come multipart
+    fetch(form.action, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(new FormData(form)).toString()
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
     })
       .then(function (res) {
         if (!res.ok) throw new Error(res.status);
+        form.reset();
         form.hidden = true;
         done.hidden = false;
         done.focus();
       })
       .catch(function () {
-        status.querySelector('span').textContent = 'la richiesta non è partita. Riprova tra qualche minuto o scrivimi a mmarchetti.web@gmail.com.';
-        status.hidden = false;
-        button.disabled = false;
+        showStatus('la richiesta non è partita e i dati che hai scritto sono ancora qui. Riprova tra qualche minuto o scrivimi direttamente a mmarchetti.web@gmail.com.');
+        button.removeAttribute('aria-disabled');
         label.textContent = idleText;
       })
       .then(function () {
+        sending = false;
         form.removeAttribute('aria-busy');
       });
   });
