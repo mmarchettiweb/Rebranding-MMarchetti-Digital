@@ -550,8 +550,19 @@ fieldset { padding: 0; border: 0; min-width: 0; }
   .placeholder { padding: var(--space-3); }
 }
 
-/* ---------- Chi sono: foto segnaposto ---------- */
-.about__photo { aspect-ratio: 16 / 10; }
+/* ---------- Chi sono: foto ---------- */
+/* Su mobile il taglio 16:10 tiene il volto in alto; da 840px la foto è intera (4:5) */
+.about__photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: 50% 8%;
+  background: var(--bianco);
+  border: 1px solid var(--linea);
+  border-radius: var(--radius);
+}
 @media (min-width: 840px) {
   .about__photo { grid-column: 9 / span 4; aspect-ratio: 4 / 5; align-self: end; }
 }
